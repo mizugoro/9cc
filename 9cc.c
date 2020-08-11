@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 int main(int argc,char **argv){
     if(argc != 2){
@@ -14,12 +15,12 @@ int main(int argc,char **argv){
     printf("    mov rax, %ld\n",strtol(p,&p,10));
     
     while(*p){
-        if(*p == "+"){
+        if(strcmp(p,"+")){
             p++;
             printf("    add rax, %ld\n",strtol(p,&p,10));
             continue;
         }
-        if(*p == "-"){
+        if(strcmp(p,"-")){
             p++;
             printf("    sub rax, %ld\n",strtol(p,&p,10));
             continue;
