@@ -15,12 +15,12 @@ int main(int argc,char **argv){
     printf("    mov rax, %ld\n",strtol(p,&p,10));
     
     while(*p){
-        if(strcmp(p,"+")){
+        if(*p == '+'){
             p++;
             printf("    add rax, %ld\n",strtol(p,&p,10));
             continue;
         }
-        if(strcmp(p,"-")){
+        else if(*p == '-'){
             p++;
             printf("    sub rax, %ld\n",strtol(p,&p,10));
             continue;
